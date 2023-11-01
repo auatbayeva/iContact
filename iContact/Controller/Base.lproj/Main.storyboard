@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="T1S-36-Rhx">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Contacts-->
+        <scene sceneID="NQW-Jw-rfd">
+            <objects>
+                <viewController id="1BU-dc-Rfd" customClass="ViewController" customModule="iContact" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dIE-NZ-h0O">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="EWn-Pr-w43">
+                                <rect key="frame" x="0.0" y="143" width="393" height="675"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cKY-bv-npe">
+                                <rect key="frame" x="100" y="103" width="193" height="31"/>
+                                <segments>
+                                    <segment title="First name"/>
+                                    <segment title="Last Name"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeSegmentedControl:" destination="1BU-dc-Rfd" eventType="valueChanged" id="1Ky-AW-9zm"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KhQ-I7-Vw1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="EWn-Pr-w43" firstAttribute="trailing" secondItem="KhQ-I7-Vw1" secondAttribute="trailing" id="5f8-x3-GnB"/>
+                            <constraint firstItem="KhQ-I7-Vw1" firstAttribute="trailing" secondItem="cKY-bv-npe" secondAttribute="trailing" constant="100" id="Cft-vY-jju"/>
+                            <constraint firstItem="EWn-Pr-w43" firstAttribute="top" secondItem="cKY-bv-npe" secondAttribute="bottom" constant="10" id="Jhf-28-HXt"/>
+                            <constraint firstItem="EWn-Pr-w43" firstAttribute="top" secondItem="KhQ-I7-Vw1" secondAttribute="top" constant="40" id="Sl0-wk-zQF"/>
+                            <constraint firstItem="cKY-bv-npe" firstAttribute="top" secondItem="KhQ-I7-Vw1" secondAttribute="top" id="YyD-AT-C3O"/>
+                            <constraint firstItem="cKY-bv-npe" firstAttribute="leading" secondItem="KhQ-I7-Vw1" secondAttribute="leading" constant="100" id="byN-Cp-hSp"/>
+                            <constraint firstItem="KhQ-I7-Vw1" firstAttribute="bottom" secondItem="EWn-Pr-w43" secondAttribute="bottom" id="cCZ-Qs-QQn"/>
+                            <constraint firstItem="EWn-Pr-w43" firstAttribute="leading" secondItem="KhQ-I7-Vw1" secondAttribute="leading" id="n5C-Rf-sj2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Contacts" id="8PI-hN-vpQ">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="9W3-ZB-ezc">
+                            <connections>
+                                <action selector="AddContactButtonPressed:" destination="1BU-dc-Rfd" id="unk-59-vse"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="segmentedControl" destination="cKY-bv-npe" id="CLe-9d-OQT"/>
+                        <outlet property="tableView" destination="EWn-Pr-w43" id="TSY-1Y-bDy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f8h-Pn-FRb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1112.2137404580153" y="20.422535211267608"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="HBS-Jz-1iQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="T1S-36-Rhx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PnE-Uo-4NB">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1BU-dc-Rfd" kind="relationship" relationship="rootViewController" id="qBH-fU-HJu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wea-Kc-Ua3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="185.49618320610685" y="20.422535211267608"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
